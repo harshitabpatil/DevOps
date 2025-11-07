@@ -1,3 +1,3 @@
-print("Welcome to my program")
-x = 5 + 4
-print("Result:", x)
+print("Welcome to my Python app")
+x = 100 + 200
+print("Output:", x)

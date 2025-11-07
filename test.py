@@ -1,3 +1,3 @@
-print("Hello world - Main branch")
+print("Welcome to my program")
 x = 5 + 4
-print("Result from main:", x)
+print("Result:", x)

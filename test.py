@@ -1,3 +1,3 @@
 print("Hello wolrd")
-x=5+4
+x=10+20
 print(x)

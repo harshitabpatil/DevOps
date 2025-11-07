@@ -1,3 +1,3 @@
-print("Hello wolrd")
-x=10+20
-print(x)
+print("Hello world - Main branch")
+x = 5 + 4
+print("Result from main:", x)

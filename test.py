@@ -1,6 +1,6 @@
 # =========================
 
-# BIG CONFLICT DEMO (TEST)
+# BIG CONFLICT DEMO (MAIN)
 
 # Single file: test.py
 
@@ -16,11 +16,11 @@ SETTINGS = {
 
     "service": "conflict-lab",
 
-    "replicas": 2,            # TEST kept 2
+    "replicas": 4,            # MAIN changed to 4
 
-    "log_level": LOG_LEVEL,   # TEST
+    "log_level": LOG_LEVEL,   # MAIN
 
-    "features": ["auth", "api", "tracing"],  # TEST swapped metrics->tracing
+    "features": ["auth", "api", "metrics"],  # MAIN added metrics
 
 }
  

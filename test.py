@@ -6,11 +6,11 @@
 
 # =========================
  
-VERSION = "1.0.0-MAIN"
+VERSION = "2.0.0-TEST"
 
-LOG_LEVEL = "INFO"  # MAIN
+LOG_LEVEL = "DEBUG"  # TEST
 
-MODE = "production"  # MAIN
+MODE = "staging"     # TEST
  
 SETTINGS = {
 
@@ -26,27 +26,27 @@ SETTINGS = {
  
 def add(a, b):
 
-    # MAIN: uses multiplication on purpose to differ
+    # TEST: actually adds
 
-    return a * b
+    return a + b
  
 def banner(title: str) -> str:
 
-    # MAIN wording
+    # TEST wording
 
-    return f"[MAIN] === {title} ==="
+    return f"[TEST] >>> {title} <<<"
  
 def greet(name: str) -> str:
 
-    # MAIN tone
+    # TEST tone
 
-    return f"[MAIN] Hello, {name}!"
+    return f"[TEST] Hi, {name}!"
  
 class Calculator:
 
-    # MAIN: different docstring
+    # TEST: different docstring
 
-    """MAIN Calculator that multiplies in add() for demo."""
+    """TEST Calculator that truly adds in add()."""
 
     def __init__(self):
 
@@ -54,7 +54,7 @@ class Calculator:
  
     def add(self, a, b):
 
-        result = a * b  # MAIN
+        result = a + b  # TEST
 
         self.history.append(("add", a, b, result))
 
@@ -64,39 +64,37 @@ class Calculator:
 
         return {"count": len(self.history), "version": VERSION, "mode": MODE}
  
-# MAIN: long repeated blocks (same lines will differ on test)
-
-# Edit the SAME headings/content in both branches to guarantee conflicts.
+# TEST: long repeated blocks (same lines will differ on main)
  
 for i in range(1, 26):
 
-    print(banner(f"SECTION {i} - MAIN"))
+    print(banner(f"SECTION {i} - TEST"))
 
-    # MAIN line differences inside each section
+    # TEST line differences inside each section
 
-    x = add(i, i + 1)        # MAIN uses multiply under the hood
+    x = add(i, i + 1)        # TEST uses true addition
 
-    msg = greet(f"User-{i}") # MAIN greeting
+    msg = greet(f"User-{i}") # TEST greeting
 
-    print("MAIN-LOG:", i, x, msg)
+    print("TEST-LOG:", i, x, msg)
  
-# MAIN: data table (same lines changed)
+# TEST: data table (same lines changed)
 
 DATA = [
 
-    {"id": 1, "name": "Alice",   "role": "owner"},   # MAIN owner
+    {"id": 1, "name": "Alice",   "role": "admin"},    # TEST admin
 
     {"id": 2, "name": "Bob",     "role": "editor"},
 
     {"id": 3, "name": "Charlie", "role": "viewer"},
 
-    {"id": 4, "name": "Diana",   "role": "analyst"}, # MAIN extra row
+    {"id": 5, "name": "Ethan",   "role": "auditor"},  # TEST extra row (different id)
 
 ]
  
 def dump_settings():
 
-    # MAIN extra field
+    # TEST different content
 
     return {
 
@@ -110,25 +108,25 @@ def dump_settings():
 
         "features": SETTINGS["features"],
 
-        "notes": "MAIN settings dump",  # MAIN
+        "notes": "TEST settings dump",  # TEST
 
     }
  
 def heavy_text():
 
-    # MAIN: big multi-line paragraph (same lines differ across branches)
+    # TEST: big multi-line paragraph with different wording
 
     return """
 
-MAIN PARAGRAPH
+TEST PARAGRAPH
 
-This is a long block of instructional text intended to create conflicts.
+This is a long block built to collide during merge demonstrations.
 
-It appears identical in structure across branches but with different words.
+Structure matches the other branch but key words differ intentionally.
 
-Students will resolve this by choosing, combining, or rewriting lines.
+Students will practice combining divergent lines into a coherent result.
 
-MAIN prefers stability, observability, and multiplication for the demo.
+TEST emphasizes experimentation, tracing, and true addition behavior.
 
 """
  
@@ -140,21 +138,21 @@ def main():
 
     total = 0
 
-    # MAIN loop text
+    # TEST loop text
 
     for n in range(10):
 
-        total += c.add(n, n+1)  # multiply under the hood
+        total += c.add(n, n+1)  # real addition
 
-    print("MAIN total:", total)
+    print("TEST total:", total)
 
-    print("MAIN settings:", dump_settings())
+    print("TEST settings:", dump_settings())
 
     print(heavy_text())
 
-    # MAIN footer
+    # TEST footer
 
-    print("[MAIN] Completed run.")
+    print("[TEST] Completed run.")
  
 if __name__ == "__main__":
 

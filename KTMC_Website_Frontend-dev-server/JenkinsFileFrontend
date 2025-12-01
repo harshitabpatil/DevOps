@@ -1,27 +1,29 @@
 pipeline {
     agent any
     environment {
-        TARGET_SERVER = 'ubuntu@3.237.2.239' // Update with the EC2 user and IP
-        FRONTEND_DIR = '/home/ubuntu/DevOps/KTMC_Website_Frontend-dev-server' // Target folder for Frontend on EC2 machine
-        FRONTEND_SERVICE_NAME = 'KTMC_Website_Frontend' // PM2 service name for Frontend
+        TARGET_SERVER = 'ubuntu@3.237.2.239' // EC2 user and IP
+        FRONTEND_DIR = '/home/ubuntu/DevOps/KTMC_Website_Frontend-dev-server' // Target folder on EC2
+        FRONTEND_SERVICE_NAME = 'KTMC_Website_Frontend' // PM2 service name
+        SSH_KEY = '/var/lib/jenkins/.ssh/id_rsa' // Path to Jenkins SSH private key
     }
     stages {
         stage('Checkout Code') {
             steps {
-                checkout scm // Checkout code for Frontend
+                checkout scm
             }
         }
         stage('Deploy Frontend to EC2') {
             steps {
                 script {
-                    // SCP Frontend code to EC2
+                    // SCP Frontend code to EC2 (excluding .git and Jenkinsfile)
                     sh """
-                    scp -r ./* ${TARGET_SERVER}:${FRONTEND_DIR}/
+                    scp -o StrictHostKeyChecking=no -i ${SSH_KEY} -r ./KTMC_Website_Frontend-dev-server/* ${TARGET_SERVER}:${FRONTEND_DIR}/
                     """
-                    // SSH into the EC2 instance for Frontend deployment
+                    
+                    // SSH into EC2 and deploy
                     sh """
-                    ssh ${TARGET_SERVER} << EOF
-                    set -e  # Stop execution if any command fails
+                    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY} ${TARGET_SERVER} << 'EOF'
+set -e  # Stop if any command fails
 cd ${FRONTEND_DIR}
 rm -rf node_modules package-lock.json
 npm install express@4 --legacy-peer-deps

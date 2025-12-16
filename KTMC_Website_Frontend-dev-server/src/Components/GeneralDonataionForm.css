@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #FFB300;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6a000;
+  color: white;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid #FFB300;
+}
+
+.modal-header {
+  background-color: #FFB300;
+  color: black;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+/* .btn-close {
+  background-color: black;
+  border-radius: 50%;
+  opacity: 1;
+  filter: invert(1);
+} */
+
+.modal-body {
+  padding: 30px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-select {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-select:focus {
+  border-color: #FFB300;
+  box-shadow: none;
+  outline: none;
+}
+
+button.btn-success {
+  background-color: #FFB300;
+  color: black;
+  border: none;
+}
+
+button.btn-success:hover {
+  background-color: #e6a000;
+  color: white;
+}

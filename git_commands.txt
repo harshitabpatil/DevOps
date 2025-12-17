@@ -1,0 +1,8 @@
+git init --> Initialize (filesystem-->VCS) an empty repo
+git add . --> staging(add all the files to repo (but untracked))
+git commit -m "done" --> Once commited , can be tracked by git
+git remote add origin https://github.com/harshitabpatil/DevOps.git --> (hosting local repo(git) to remote repo(on browser-github))
+git push origin master --> pushing files in local repo to remote repo
+git fetch -a --> fetching all branches from remote repo
+git pull origin test-branch --> fetching all files from remote repo to local repo
+git status --> get the current working repo/status of repo

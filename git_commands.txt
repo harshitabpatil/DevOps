@@ -5,4 +5,4 @@ git remote add origin https://github.com/harshitabpatil/DevOps.git --> (hosting 
 git push origin master --> pushing files in local repo to remote repo
 git fetch -a --> fetching all branches from remote repo
 git pull origin test-branch --> fetching all files from remote repo to local repo
-git status --> get the current workinh repo/status of repo
+git status --> get the current working repo/status of repo

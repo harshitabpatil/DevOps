@@ -6,3 +6,6 @@ git push origin master --> pushing files in local repo to remote repo
 git fetch -a --> fetching all branches from remote repo
 git pull origin test-branch --> fetching all files from remote repo to local repo
 git status --> get the current working repo/status of repo
+git branch branch-name --> create new branch
+git checkout -b branch name --> also create new branch and switch to that branch
+git switch branchname --> switches to particular branch

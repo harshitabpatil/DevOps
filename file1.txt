@@ -1,1 +1,2 @@
-git for devOPs 
+git for devOPs
+connecting local repo to remot erepo 

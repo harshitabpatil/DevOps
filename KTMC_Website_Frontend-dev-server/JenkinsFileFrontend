@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        TARGET_SERVER = 'ubuntu@54.89.171.67' // EC2 user and IP
+        TARGET_SERVER = 'ubuntu@100.26.43.119' // EC2 user and IP
         FRONTEND_DIR = '/home/ubuntu/DevOps/KTMC_Website_Frontend-dev-server' // Target folder on EC2
         FRONTEND_SERVICE_NAME = 'KTMC_Website_Frontend' // PM2 service name
         SSH_KEY = '/var/lib/jenkins/.ssh/id_rsa' // Path to Jenkins SSH private key
